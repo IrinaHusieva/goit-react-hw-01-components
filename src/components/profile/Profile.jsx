@@ -1,4 +1,7 @@
-import css from './Profile.module.css'
+import css from './Profile.module.css';
+import PropTypes from "prop-types";
+
+
 export const Profile = ({ user }) => {
      const { username, tag, location, avatar, stats } = user;
   const { followers = 0, views = 0, likes = 0 } = stats;
@@ -29,4 +32,8 @@ export const Profile = ({ user }) => {
     </li>
   </ul>
 </div>)
+}
+
+Profile.propTypes = {
+  user: PropTypes.object.isRequired
 }
